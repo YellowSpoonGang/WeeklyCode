@@ -23,12 +23,13 @@ def removeDup(list):
     head = list.head
     current = list.head
     value =  current.value
-    while head!=list.tail:
-        next= current.next
-        if value == next.value:
-            current.next = next.next
-            next.next = None
+    while head !=list.tail:
+        while current!=list.tail:
+            next= current.next
+            if value == next.value:
+                current.next = next.next
+                next.next = None
+            current = current.next
         head = head.next
         value = head.value
-        current= head
-
+        current = head
